@@ -18,4 +18,7 @@ libraryDependencies ++= Seq(
   "org.tpolecat" %% "doobie-specs2" % doobieVersion
 )
 
+// Add Monix for handling monads
+libraryDependencies += "io.monix" %% "monix" % "3.3.0"
+
 mainClass in(Compile, run) := Some("com.kiatack.app.MainApp")

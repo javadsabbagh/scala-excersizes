@@ -8,5 +8,6 @@ object MainApp extends App {
 
   import com.kiatack.country
 
-  CountryRepo.testQuery
+  // CountryRepo.testQuery
+  CountryRepo.runProgram3
 }

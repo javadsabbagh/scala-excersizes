@@ -40,6 +40,19 @@ import com.kiatack.conn.Connection
 
 object CountryRepo {
 
+  private val program3: ConnectionIO[(Int, Double)] =
+    for {
+      a <- sql"select 42".query[Int].unique
+      b <- sql"select random()".query[Double].unique
+    } yield (a, b)
+
+  private val program3a = {
+    val a: ConnectionIO[Int] = sql"select 42".query[Int].unique
+    val b: ConnectionIO[Double] = sql"select random()".query[Double].unique
+    (a, b).tupled
+  }
+
+
   def testQuery = {
     val program2 = sql"select 42".query[Int].unique
     val io2 = program2.transact(Connection.xa)
@@ -47,6 +60,16 @@ object CountryRepo {
   }
 
   def selectCountry(name: String) = {
+
+  }
+
+  def runProgram3 = {
+    // use program3 or program3a
+    program3.transact(Connection.xa).unsafeRunSync.map(x => {  // todo what does map means here!!
+      println(s"Hem: $x")
+    })
+
+//    program3a.transact(Connection.xa).unsafeRunSync.forall(x => println(s"Hau: $x"))
 
   }
 }
