@@ -33,9 +33,14 @@ libraryDependencies ++= Seq(
   "ch.qos.logback" % "logback-classic" % "1.2.3"
 )
 
-scalacOptions ++= Seq(
- "-Xfatal-warnings"
-)
+// Configuration library for JVM languages:  [HOCON, Java .properties, JSON] config files  ==> Scala classes
+// Look at  pureconfig.github.io  for documentations
+libraryDependencies += "com.typesafe" % "config" % "1.4.1"
+
+
+//scalacOptions ++= Seq(
+// "-Xfatal-warnings"
+//)
 
 
 mainClass in(Compile, run) := Some("com.kiatack.app.MainApp")
