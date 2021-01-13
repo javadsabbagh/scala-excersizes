@@ -21,4 +21,21 @@ libraryDependencies ++= Seq(
 // Add Monix for handling monads
 libraryDependencies += "io.monix" %% "monix" % "3.3.0"
 
+// Add Cats library
+libraryDependencies ++= Seq(
+ "org.typelevel" %% "cats-core" % "2.3.1"
+)
+
+// Add Slick library
+libraryDependencies ++= Seq(
+  "com.typesafe.slick" %% "slick" % "3.3.3",
+  "com.h2database" % "h2" % "1.4.200",
+  "ch.qos.logback" % "logback-classic" % "1.2.3"
+)
+
+scalacOptions ++= Seq(
+ "-Xfatal-warnings"
+)
+
+
 mainClass in(Compile, run) := Some("com.kiatack.app.MainApp")
