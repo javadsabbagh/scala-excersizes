@@ -43,4 +43,5 @@ libraryDependencies += "com.typesafe" % "config" % "1.4.1"
 //)
 
 
-mainClass in(Compile, run) := Some("com.kiatack.app.MainApp")
+//mainClass in(Compile, run) := Some("com.kiatack.app.MainApp")
+mainClass in(Compile, run) := Some("com.kiatack.practice.EnumTest")
